@@ -45,6 +45,13 @@ html, body {
     font-size: 14px;
     line-height: 22px;
 }
+.navbar-inverse{
+    background:transparent;
+    border:none;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
+    background:transparent;
+}
 
 .wrapper, .main #main {
     float: left;
@@ -147,32 +154,54 @@ header {
             border-width: 22px 0 0 22px;
             border-color: transparent transparent transparent $blue;
         }
+        @include responsive("max-width: 1000px") {
+            .container {
+                width: inherit;
+            }
+            .top-nav__contact { right:0px;}
+            .top-nav__contact-left{ right:385px;}
+            .top-nav__contact-right {
+                display: none;
+            }
+        }
     }
     .header__logo {
-        float: left;
+        display: inline-block;
         margin-left: 25px;
         margin-top: 25px;
         @include responsive("max-width: 1200px") {
-            @include scale(0.8);
+            img{
+                width:150px;
+            }
         }
     }
     .header__menu {
-        float: right;
         margin-top: 85px;
-        .header__menu-item {
-            color: #000;
-            font-size: 1.4em;
-            margin: 0px 15px;
-            &:hover,&.active {
-                color: #428bca;
-                text-decoration: none;
+        .nav{
+            float: right;
+            .header__menu-item {
+                color: #000;
+                font-size: 1.4em;
+                margin: 0px 15px;
+                &:hover,&.active {
+                    color: #428bca;
+                    text-decoration: none;
+                }
             }
-        }
-
-        @include responsive("max-width: 1200px") {
-            margin-top: 60px;
-            .header__menu-item{
-                font-size: 1.1em;
+             @include responsive("max-width: 1200px") {
+                margin-top: 0px;
+                .header__menu-item{
+                    font-size: 1em;
+                    margin: 0px 10px;
+                }
+            }
+            @include responsive("max-width: 1000px") {
+                margin-top: 0px;
+                .header__menu-item{
+                    font-size: 1em;
+                    margin: 0px 10px;
+                    padding:0px;
+                }
             }
         }
     }
@@ -181,7 +210,7 @@ header {
         background: rgba(255, 255, 255, 0.5);
         .header__logo {
             margin-top: 5px;
-            height: 70px;
+            height: 85px;
             img {
                 height: 100%;
             }
@@ -192,10 +221,19 @@ header {
             margin-left: 100px;
             .header__menu-item {
                 text-shadow: 2.5px 4.33px 5px rgba(0, 0, 0, .2);
-                font-size: 1.1em;
+                font-size: 1em;
                 -webkit-text-stroke-width: initial;
                 -webkit-text-stroke-color: initial;
                 -webkit-text-fill-color: initial;
+            }
+            @include responsive("max-width: 1000px") {
+                margin-left: 0px;
+                margin-top: 50px;
+                .header__menu-item{
+                    font-size: 1em;
+                    margin: 0px 10px;
+                    padding:0px;
+                }
             }
         }
     }
@@ -317,6 +355,12 @@ $turquoise:rgba(255, 255, 255, 0.4);
             font-size: 1em;
             line-height: 1.4em;
         }
+        @include responsive("max-width: 767px") {
+            .col-xs-8,.col-xs-10{
+                float: none;
+                margin:0 auto;
+            }
+        }
         a{
             display: block;
             vertical-align: bottom;
@@ -436,6 +480,7 @@ $turquoise:rgba(255, 255, 255, 0.4);
                 }
             }
         }
+
     }
     .pages__what_we_do {
         background:#5e5d58 url(../../images/what_we_do.jpg) center no-repeat;
@@ -500,17 +545,17 @@ $turquoise:rgba(255, 255, 255, 0.4);
                 }
                 @include bp(medium) {
                     a{
-                        padding: 0 15px;
+                        padding: 0 3px;
                     }
                  }
                  @include bp(large) {
                     a{
-                        padding: 0 20px;
+                        padding: 0 15px;
                     }
                  }
                  @include bp(xlarge) {
                     a{
-                        padding: 0 30px;
+                        padding: 0 25px;
                     }
                  }
                 .project_name{
@@ -608,6 +653,12 @@ $turquoise:rgba(255, 255, 255, 0.4);
         }
         p{
             font-size: 1em;
+        }
+        @include responsive("max-width: 767px") {
+            .col-xs-8,.col-xs-10{
+                float: none;
+                margin:0 auto;
+            }
         }
         .hexagon{
             display: inline-block;
