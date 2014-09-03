@@ -95,32 +95,42 @@ $(document).ready(function() {
        $.fn.fullpage.moveTo(1, 0);
         return false;
     });
-        $('.responsive').slick({
-        dots: true,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-            }
-        }, {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }, {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }]
+    $('.pages__who_we_are .container').width($('body').width());
+    $(window).resize(function(){
+        $('body').fadeOut('fast', function() {
+            setTimeout(function(){
+                location.reload();
+            }, 120); 
+        });
     });
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:20,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                animateIn:true,
+                animateOut:true,
+                nav:true,
+            },
+            480:{
+                items:1,
+                animateIn:true,
+                animateOut:true,
+                nav:true,
+            },
+            640:{
+                items:1,
+                animateIn:true,
+                animateOut:true,
+                nav:true,
+            },
+            768:{
+                items:3,
+                nav:false,
+                loop:false
+            }
+        }
+    })
 });

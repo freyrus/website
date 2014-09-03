@@ -13,6 +13,8 @@ var paths = {
     css: [
         './bower_components/pace/themes/blue/pace-theme-big-counter.css',
         './bower_components/fullpage.js/jquery.fullPage.css',
+        './bower_components/owl-carousel2/dist/assets/owl.carousel.css',
+        './bower_components/owl-carousel2/dist/assets/owl.theme.default.css',
         './css/*.css'
     ],
     js: [
@@ -22,6 +24,7 @@ var paths = {
         './bower_components/fullpage.js/vendors/jquery.easings.min.js',
         './bower_components/fullpage.js/jquery.fullPage.min.js',
         './bower_components/pace/pace.min.js',
+        './bower_components/owl-carousel2/dist/owl.carousel.min.js',
         './js/freyrus.js'
     ],
     sass: [
